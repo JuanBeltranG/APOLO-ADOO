@@ -1,0 +1,1382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Resources/Icon/Apolo.png" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="https://landkit.goodthemes.co/assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="https://landkit.goodthemes.co/assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>Apolo</title>
+     <!-- App css -->
+        
+
+  </head>
+  <body>
+
+    <!-- MODALS -->
+    <!-- Example -->
+    <div class="modal fade" id="modalExample" tabindex="-1" role="dialog" aria-labelledby="modalExampleTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+    
+            <!-- Close -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <div class="text-center">
+              <img src=https://landkit.goodthemes.co./assets/img/illustrations/illustration-1.png" alt="..." class="img-fluid mb-3" style="width: 200px;">
+            </div>
+    
+            <!-- Heading -->
+            <h2 class="fw-bold text-center mb-1" id="modalExampleTitle">
+              Schedule a demo with us
+            </h2>
+    
+            <!-- Text -->
+            <p class="fs-lg text-center text-muted mb-6 mb-md-8">
+              We can help you solve company communication.
+            </p>
+    
+            <!-- Form -->
+            <form>
+              <div class="row">
+                <div class="col-12 col-md-6">
+    
+                  <!-- First name -->
+                  <div class="form-floating">
+                    <input type="text" class="form-control form-control-flush" id="registrationFirstNameModal" placeholder="First name">
+                    <label for="registrationFirstNameModal">First name</label>
+                  </div>
+    
+                </div>
+                <div class="col-12 col-md-6">
+    
+                  <!-- Last name -->
+                  <div class="form-floating">
+                    <input type="text" class="form-control form-control-flush" id="registrationLastNameModal" placeholder="Last name">
+                    <label for="registrationLastNameModal">Last name</label>
+                  </div>
+    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+    
+                  <!-- Email -->
+                  <div class="form-floating">
+                    <input type="email" class="form-control form-control-flush" id="registrationEmailModal" placeholder="Email">
+                    <label for="registrationEmailModal">Email</label>
+                  </div>
+    
+                </div>
+                <div class="col-12 col-md-6">
+    
+                  <!-- Password -->
+                  <div class="form-floating">
+                    <input type="password" class="form-control form-control-flush" id="registrationPasswordModal" placeholder="Password">
+                    <label for="registrationPasswordModal">Password</label>
+                  </div>
+    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+    
+                  <!-- Submit -->
+                  <button class="btn w-100 btn-primary mt-3 lift">
+                    Request a demo
+                  </button>
+    
+                </div>
+              </div>
+            </form>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Signup: Horizontal  -->
+    <div class="modal fade" id="modalSignupHorizontal" tabindex="-1" role="dialog" aria-labelledby="modalSignupHorizontalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-row">
+            <div class="row gx-0">
+              <div class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url(./assets/img/photos/photo-8.jpg);">
+    
+                <!-- Image (placeholder) -->
+                <img src="./assets/img/photos/photo-8.jpg" alt="..." class="img-fluid d-md-none invisible">
+    
+                <!-- Shape -->
+                <div class="shape shape-end shape-fluid-y text-white d-none d-md-block">
+                  <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M116 0H51v172C76 384 0 517 0 517v173h116V0z" fill="currentColor"/></svg>            </div>
+    
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card-body">
+    
+                  <!-- Close -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+                  <!-- Heading -->
+                  <h2 class="mb-0 fw-bold text-center" id="modalSignupHorizontalTitle">
+                    Sign Up
+                  </h2>
+    
+                  <!-- Text -->
+                  <p class="mb-6 text-center text-muted">
+                    Simplify your workflow in minutes.
+                  </p>
+    
+                  <!-- Form -->
+                  <form class="mb-6">
+    
+                    <!-- Email -->
+                    <div class="form-group">
+                      <label class="visually-hidden" for="modalSignupHorizontalEmail">
+                        Your email
+                      </label>
+                      <input type="email" class="form-control" id="modalSignupHorizontalEmail" placeholder="Your email">
+                    </div>
+    
+                    <!-- Password -->
+                    <div class="form-group mb-5">
+                      <label class="visually-hidden" for="modalSignupHorizontalPassword">
+                        Create a password
+                      </label>
+                      <input type="password" class="form-control" id="modalSignupHorizontalPassword" placeholder="Create a password">
+                    </div>
+    
+                    <!-- Submit -->
+                    <button class="btn w-100 btn-primary" type="submit">
+                      Sign up
+                    </button>
+    
+                  </form>
+    
+                  <!-- Text -->
+                  <p class="mb-0 fs-sm text-center text-muted">
+                    Already have an account? <a href="./signin-illustration.html">Log in</a>.
+                  </p>
+    
+                </div>
+              </div>
+    
+            </div> <!-- / .row -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Signup: Vertical  -->
+    <div class="modal fade" id="modalSignupVertical" tabindex="-1" role="dialog" aria-labelledby="modalSignupVerticalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card">
+    
+            <!-- Close -->
+            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img src="./assets/img/photos/photo-7.jpg" alt="..." class="card-img-top">
+    
+            <!-- Shape -->
+            <div class="position-relative">
+              <div class="shape shape-bottom shape-fluid-x text-white">
+                <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>          </div>
+            </div>
+    
+            <!-- Body -->
+            <div class="card-body">
+    
+              <!-- Heading -->
+              <h2 class="mb-0 fw-bold text-center" id="modalSignupVerticalTitle">
+                Sign Up
+              </h2>
+    
+              <!-- Text -->
+              <p class="mb-6 text-center text-muted">
+                Simplify your workflow in minutes.
+              </p>
+    
+              <!-- Form -->
+              <form class="mb-6">
+    
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="visually-hidden" for="modalSignupVerticalEmail">
+                    Your email
+                  </label>
+                  <input type="email" class="form-control" id="modalSignupVerticalEmail" placeholder="Your email">
+                </div>
+    
+                <!-- Password -->
+                <div class="form-group mb-5">
+                  <label class="visually-hidden" for="modalSignupVerticalPassword">
+                    Create a password
+                  </label>
+                  <input type="password" class="form-control" id="modalSignupVerticalPassword" placeholder="Create a password">
+                </div>
+    
+                <!-- Submit -->
+                <button class="btn w-100 btn-primary" type="submit">
+                  Sign up
+                </button>
+    
+              </form>
+    
+              <!-- Text -->
+              <p class="mb-0 fs-sm text-center text-muted">
+                Already have an account? <a href="./signin-illustration.html">Log in</a>.
+              </p>
+    
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Signin: Horizontal  -->
+    <div class="modal fade" id="modalSigninHorizontal" tabindex="-1" role="dialog" aria-labelledby="modalSigninHorizontalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card card-row">
+            <div class="row gx-0">
+              <div class="col-12 col-md-6 bg-cover card-img-start" style="background-image: url(./assets/img/photos/photo-1.jpg);">
+    
+                <!-- Image (placeholder) -->
+                <img src="./assets/img/photos/photo-1.jpg" alt="..." class="img-fluid d-md-none invisible">
+    
+                <!-- Shape -->
+                <div class="shape shape-end shape-fluid-y text-white d-none d-md-block">
+                  <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M116 0H51v172C76 384 0 517 0 517v173h116V0z" fill="currentColor"/></svg>            </div>
+    
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="card-body">
+    
+                  <!-- Close -->
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+                  <!-- Heading -->
+                  <h2 class="mb-0 fw-bold text-center" id="modalSigninHorizontalTitle">
+                    Sign In
+                  </h2>
+    
+                  <!-- Text -->
+                  <p class="mb-6 text-center text-muted">
+                    Simplify your workflow in minutes.
+                  </p>
+    
+                  <!-- Form -->
+                  <form class="mb-6">
+    
+                    <!-- Email -->
+                    <div class="form-group">
+                      <label class="visually-hidden" for="modalSigninHorizontalEmail">
+                        Your email
+                      </label>
+                      <input type="email" class="form-control" id="modalSigninHorizontalEmail" placeholder="Your email">
+                    </div>
+    
+                    <!-- Password -->
+                    <div class="form-group mb-5">
+                      <label class="visually-hidden" for="modalSigninHorizontalPassword">
+                        Enter your password
+                      </label>
+                      <input type="password" class="form-control" id="modalSigninHorizontalPassword" placeholder="Enter your password">
+                    </div>
+    
+                    <!-- Submit -->
+                    <button class="btn w-100 btn-primary" type="submit">
+                      Sign in
+                    </button>
+    
+                  </form>
+    
+                  <!-- Text -->
+                  <p class="mb-0 fs-sm text-center text-muted">
+                    Don't have an account yet? <a href="./signin-illustration.html">Sign up</a>.
+                  </p>
+    
+                </div>
+              </div>
+    
+            </div> <!-- / .row -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Signin: Vertical  -->
+    <div class="modal fade" id="modalSigninVertical" tabindex="-1" role="dialog" aria-labelledby="modalSigninVerticalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="card">
+    
+            <!-- Close -->
+            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+            <!-- Image -->
+            <img src="./assets/img/photos/photo-21.jpg" alt="..." class="card-img-top">
+    
+            <!-- Shape -->
+            <div class="position-relative">
+              <div class="shape shape-bottom shape-fluid-x text-white">
+                <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>          </div>
+            </div>
+    
+            <!-- Body -->
+            <div class="card-body">
+    
+              <!-- Heading -->
+              <h2 class="mb-0 fw-bold text-center" id="modalSigninVerticalTitle">
+                Sign In
+              </h2>
+    
+              <!-- Text -->
+              <p class="mb-6 text-center text-muted">
+                Simplify your workflow in minutes.
+              </p>
+    
+              <!-- Form -->
+              <form class="mb-6">
+    
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="visually-hidden" for="modalSigninVerticalEmail">
+                    Your email
+                  </label>
+                  <input type="email" class="form-control" id="modalSigninVerticalEmail" placeholder="Your email">
+                </div>
+    
+                <!-- Password -->
+                <div class="form-group mb-5">
+                  <label class="visually-hidden" for="modalSigninVerticalPassword">
+                    Enter your password
+                  </label>
+                  <input type="password" class="form-control" id="modalSigninVerticalPassword" placeholder="Enter your password">
+                </div>
+    
+                <!-- Submit -->
+                <button class="btn w-100 btn-primary" type="submit">
+                  Sign in
+                </button>
+    
+              </form>
+    
+              <!-- Text -->
+              <p class="mb-0 fs-sm text-center text-muted">
+                Don't have an account yet? <a href="./signin-illustration.html">Sign up</a>.
+              </p>
+    
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+    
+        <!-- Brand -->
+        <a class="navbar-brand" href="./index.html">
+          <img src="Resources/Images/LogoApolo.png" class="navbar-brand-img" alt="...">
+        </a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+    
+          <!-- Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fe fe-x"></i>
+          </button>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarLandings" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                ¿Que es apolo?
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl p-0" aria-labelledby="navbarLandings">
+                <div class="row gx-0">
+                  <div class="col-12 col-lg-6">
+                    <div class="dropdown-img-start" style="background-image: url(./assets/img/photos/photo-3.jpg);">
+    
+                      <!-- Heading -->
+                      <h4 class="fw-bold text-white mb-0">
+                        Want to see an overview?
+                      </h4>
+    
+                      <!-- Text -->
+                      <p class="fs-sm text-white">
+                        See all the pages at once.
+                      </p>
+    
+                      <!-- Button -->
+                      <a href="./overview.html" class="btn btn-sm btn-white shadow-dark fonFt-size-sm">
+                        View all pages
+                      </a>
+    
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="dropdown-body">
+                      <div class="row gx-0">
+                        <div class="col-6">
+    
+                          <!-- Heading -->
+                          <h6 class="dropdown-header">
+                            Services
+                          </h6>
+    
+                          <!-- List -->
+                          <a class="dropdown-item" href="./coworking.html">
+                            Coworking
+                          </a>
+                          <a class="dropdown-item" href="./rental.html">
+                            Rental
+                          </a>
+                          <a class="dropdown-item mb-5" href="./job.html">
+                            Job Listing
+                          </a>
+    
+                          <!-- Heading -->
+                          <h6 class="dropdown-header">
+                            Apps
+                          </h6>
+    
+                          <!-- List -->
+                          <a class="dropdown-item" href="./desktop-app.html">
+                            Desktop
+                          </a>
+                          <a class="dropdown-item" href="./mobile-app.html">
+                            Mobile
+                          </a>
+    
+                        </div>
+                        <div class="col-6">
+    
+                          <!-- Heading -->
+                          <h6 class="dropdown-header">
+                            Web
+                          </h6>
+    
+                          <!-- List -->
+                          <a class="dropdown-item" href="./index.html">
+                            Basic
+                          </a>
+                          <a class="dropdown-item" href="./startup.html">
+                            Startup
+                          </a>
+                          <a class="dropdown-item" href="./enterprise.html">
+                            Enterprise
+                          </a>
+                          <a class="dropdown-item" href="./service.html">
+                            Service
+                          </a>
+                          <a class="dropdown-item" href="./cloud.html">
+                            Cloud Hosting
+                          </a>
+                          <a class="dropdown-item" href="./agency.html">
+                            Agency
+                          </a>
+                          <a class="dropdown-item" href="./framework.html">
+                            Framework <span class="h6 text-uppercase text-primary">(new)</span>
+                          </a>
+    
+                        </div>
+                      </div> <!-- / .row -->
+                    </div>
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarPages" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                Beneficios
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarPages">
+                <div class="row gx-0">
+                  <div class="col-6">
+                    <div class="row gx-0">
+                      <div class="col-12 col-lg-6">
+    
+                        <!-- Heading -->
+                        <h6 class="dropdown-header">
+                          Career
+                        </h6>
+    
+                        <!-- List -->
+                        <a class="dropdown-item" href="./careers.html">
+                          Listing
+                        </a>
+                        <a class="dropdown-item mb-5" href="./career-single.html">
+                          Opening
+                        </a>
+    
+                        <!-- Heading -->
+                        <h6 class="dropdown-header">
+                          Company
+                        </h6>
+    
+                        <!-- List -->
+                        <a class="dropdown-item" href="./about.html">
+                          About
+                        </a>
+                        <a class="dropdown-item" href="./pricing.html">
+                          Pricing
+                        </a>
+                        <a class="dropdown-item mb-5 mb-lg-0" href="./terms-of-service.html">
+                          Terms
+                        </a>
+    
+                      </div>
+                      <div class="col-12 col-lg-6">
+    
+                        <!-- Heading -->
+                        <h6 class="dropdown-header">
+                          Help center
+                        </h6>
+    
+                        <!-- List -->
+                        <a class="dropdown-item" href="./help-center.html">
+                          Overview
+                        </a>
+                        <a class="dropdown-item mb-5" href="./help-center-article.html">
+                          Article
+                        </a>
+    
+                        <!-- Heading -->
+                        <h6 class="dropdown-header">
+                          Contact
+                        </h6>
+    
+                        <!-- List -->
+                        <a class="dropdown-item" href="./contact.html">
+                          Basic
+                        </a>
+                        <a class="dropdown-item" href="./contact-alt.html">
+                          Cover
+                        </a>
+    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="row gx-0">
+                      <div class="col-12 col-lg-6">
+    
+                        <!-- Heading -->
+                        <h6 class="dropdown-header">
+                          Blog
+                        </h6>
+    
+                        <!-- List -->
+                        <a class="dropdown-item" href="./blog.html">
+                          Rich View
+                        </a>
+                        <a class="dropdown-item" href="./blog-post.html">
+                          Article
+                        </a>
+                        <a class="dropdown-item" href="./blog-showcase.html">
+                          Showcase
+                        </a>
+                        <a class="dropdown-item mb-5 mb-lg-0" href="./blog-search.html">
+                          Search
+                        </a>
+    
+                      </div>
+                      <div class="col-12 col-lg-6">
+    
+                        <!-- Heading -->
+                        <h6 class="dropdown-header">
+                          Portfolio
+                        </h6>
+    
+                        <!-- List -->
+                        <a class="dropdown-item" href="./portfolio-masonry.html">
+                          Masonry
+                        </a>
+                        <a class="dropdown-item" href="./portfolio-grid-rows.html">
+                          Grid Rows
+                        </a>
+                        <a class="dropdown-item" href="./portfolio-parallax.html">
+                          Parallax
+                        </a>
+                        <a class="dropdown-item" href="./portfolio-case-study.html">
+                          Case Study
+                        </a>
+                        <a class="dropdown-item" href="./portfolio-sidebar.html">
+                          Sidebar
+                        </a>
+                        <a class="dropdown-item" href="./portfolio-sidebar-fluid.html">
+                          Sidebar: Fluid
+                        </a>
+                        <a class="dropdown-item" href="./portfolio-grid.html">
+                          Basic Grid
+                        </a>
+    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- / .row -->
+            </li>
+
+
+            <li class="nav-item dropdown">
+            
+              <ul class="dropdown-menu" aria-labelledby="navbarAccount">
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    Settings
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./account-general.html">
+                      General
+                    </a>
+                    <a class="dropdown-item" href="./account-security.html">
+                      Security
+                    </a>
+                    <a class="dropdown-item" href="./account-notifications.html">
+                      Notifications
+                    </a>
+                    <a class="dropdown-item" href="./billing-plans-and-payment.html">
+                      Plans & Payment
+                    </a>
+                    <a class="dropdown-item" href="./billing-users.html">
+                      Users
+                    </a>
+                  </div>
+                </li>
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    Sign In
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./signin-cover.html">
+                      Side Cover
+                    </a>
+                    <a class="dropdown-item" href="./signin-illustration.html">
+                      Illustration
+                    </a>
+                    <a class="dropdown-item" href="./signin.html">
+                      Basic
+                    </a>
+                    <a class="dropdown-item" data-bs-toggle="modal" href="#modalSigninHorizontal">
+                      Modal Horizontal
+                    </a>
+                    <a class="dropdown-item" data-bs-toggle="modal" href="#modalSigninVertical">
+                      Modal Vertical
+                    </a>
+                  </div>
+                </li>
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    Sign Up
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./signup-cover.html">
+                      Side Cover
+                    </a>
+                    <a class="dropdown-item" href="./signup-illustration.html">
+                      Illustration
+                    </a>
+                    <a class="dropdown-item" href="./signup.html">
+                      Basic
+                    </a>
+                    <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignupHorizontal">
+                      Modal Horizontal
+                    </a>
+                    <a class="dropdown-item" data-bs-toggle="modal" href="#modalSignupVertical">
+                      Modal Vertical
+                    </a>
+                  </div>
+                </li>
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    Password Reset
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./password-reset-cover.html">
+                      Side Cover
+                    </a>
+                    <a class="dropdown-item" href="./password-reset-illustration.html">
+                      Illustration
+                    </a>
+                    <a class="dropdown-item" href="./password-reset.html">
+                      Basic
+                    </a>
+                  </div>
+                </li>
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                    Error
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./error-cover.html">
+                      Side Cover
+                    </a>
+                    <a class="dropdown-item" href="./error-illustration.html">
+                      Illustration
+                    </a>
+                    <a class="dropdown-item" href="./error.html">
+                      Basic
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                Precios
+              </a>
+              <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDocumentation">
+                <div class="list-group list-group-flush">
+                  <a class="list-group-item" href="./docs/index.html">
+    
+                    <!-- Icon -->
+                    <div class="icon icon-sm text-primary">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M8 3v.5A1.5 1.5 0 009.5 5h5A1.5 1.5 0 0016 3.5V3h2a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h2z" fill="#335EEA" opacity=".3"/><path d="M11 2a1 1 0 012 0h1.5a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-5a.5.5 0 01-.5-.5v-1a.5.5 0 01.5-.5H11z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" x="7" y="10" width="5" height="2" rx="1"/><rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"/></g></svg>                </div>
+    
+                    <!-- Content -->
+                    <div class="ms-4">
+    
+                      <!-- Heading -->
+                      <h6 class="fw-bold text-uppercase text-primary mb-0">
+                        Libre
+                      </h6>
+    
+                      <!-- Text -->
+                      <p class="fs-sm text-gray-700 mb-0">
+                        Hasta 5 contactos
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                  <a class="list-group-item" href="./docs/alerts.html">
+    
+                    <!-- Icon -->
+                    <div class="icon icon-sm text-primary">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><rect fill="#335EEA" x="4" y="4" width="7" height="7" rx="1.5"/><path d="M5.5 13h4a1.5 1.5 0 011.5 1.5v4A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-4A1.5 1.5 0 015.5 13zm9-9h4A1.5 1.5 0 0120 5.5v4a1.5 1.5 0 01-1.5 1.5h-4A1.5 1.5 0 0113 9.5v-4A1.5 1.5 0 0114.5 4zm0 9h4a1.5 1.5 0 011.5 1.5v4a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-4a1.5 1.5 0 011.5-1.5z" fill="#335EEA" opacity=".3"/></g></svg>                </div>
+    
+                    <!-- Content -->
+                    <div class="ms-4">
+    
+                      <!-- Heading -->
+                      <h6 class="fw-bold text-uppercase text-primary mb-0">
+                        Estandar
+                      </h6>
+    
+                      <!-- Text -->
+                      <p class="fs-sm text-gray-700 mb-0">
+                        Hasta 250 clientes
+                      </p>
+    
+                    </div>
+    
+                  </a>
+                  <a class="list-group-item" href="./docs/changelog.html">
+    
+                    <!-- Icon -->
+                    <div class="icon icon-sm text-primary">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.857 2h7.88a1.5 1.5 0 01.968.355l4.764 4.029A1.5 1.5 0 0120 7.529v12.554c0 1.79-.02 1.917-1.857 1.917H5.857C4.02 22 4 21.874 4 20.083V3.917C4 2.127 4.02 2 5.857 2z" fill="#335EEA" opacity=".3"/><rect fill="#335EEA" x="6" y="11" width="9" height="2" rx="1"/><rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"/></g></svg>                </div>
+    
+                    <!-- Content -->
+                    <div class="ms-4">
+    
+                      <!-- Heading -->
+                      <h6 class="fw-bold text-uppercase text-primary mb-0">
+                        Profesional
+                      </h6>
+    
+                      <!-- Text -->
+                      <p class="fs-sm text-gray-700 mb-0">
+                        Disfruta de Apolo sin limite de clientes
+                      </p>
+    
+                    </div>
+    
+                    <!-- Badge -->
+                    <span class="badge rounded-pill bg-primary-soft ms-auto">
+                      2.1.0
+                    </span>
+    
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+    
+          <!-- Button -->
+          <a class="navbar-btn btn btn-sm btn-primary lift ms-auto" href="Pages/SignIn.html" style="background-color: orangered;">
+            Sign Up
+          </a>
+
+          <a class="navbar-btn btn btn-sm btn-primary lift ms-auto" href="Pages/LogIn.html" >
+            Login
+          </a>
+    
+        </div>
+    
+      </div>
+    </nav>
+
+    <!-- WELCOME -->
+    <section class="pt-4 pt-md-11">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 col-lg-6 order-md-2">
+
+            <!-- Image -->
+            <img src="Resources/Images/LandingImage.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0" alt="..." data-aos="fade-up" data-aos-delay="100">
+
+          </div>
+          <div class="col-12 col-md-7 col-lg-6 order-md-1" data-aos="fade-up">
+
+            <!-- Heading -->
+            <h1 class="display-3 text-center text-md-start">
+              El <span class="text-primary">CRM</span> especializado <br>
+              en el area de seguros.
+            </h1>
+
+            <!-- Text -->
+            <p class="lead text-center text-md-start text-muted mb-6 mb-lg-8">
+              Apolo esta enfocado en ayudar a todos los proveedores de seguros que necesiten mejorar su organización y productividad.
+            </p>
+
+            <!-- Buttons -->
+            <div class="text-center text-md-start">
+              <a href="overview.html" class="btn btn-primary shadow lift me-1">
+                Conocer más <i class="fe fe-arrow-right d-none d-md-inline ms-3"></i>
+              </a>
+              <!--<a href="docs/index.html" class="btn btn-primary-soft lift">
+                Documentation
+              </a>-->
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-8 py-md-11 border-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4" data-aos="fade-up">
+
+            <!-- Icon -->
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M7 3h10a4 4 0 110 8H7a4 4 0 110-8zm0 6a2 2 0 100-4 2 2 0 000 4z" fill="#335EEA"/><path d="M7 13h10a4 4 0 110 8H7a4 4 0 110-8zm10 6a2 2 0 100-4 2 2 0 000 4z" fill="#335EEA" opacity=".3"/></g></svg>            </div>
+
+            <!-- Heading -->
+            <h3>
+              Recordatorios de citas
+            </h3>
+
+            <!-- Text -->
+            <p class="text-muted mb-6 mb-md-0">
+              La integración del calendario permite una facil configuraciónde citas y programación de recordatorios y pendientes.
+            </p>
+
+          </div>
+          <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="50">
+
+            <!-- Icon -->
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M5.5 4h4A1.5 1.5 0 0111 5.5v1A1.5 1.5 0 019.5 8h-4A1.5 1.5 0 014 6.5v-1A1.5 1.5 0 015.5 4zm9 12h4a1.5 1.5 0 011.5 1.5v1a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-1a1.5 1.5 0 011.5-1.5z" fill="#335EEA"/><path d="M5.5 10h4a1.5 1.5 0 011.5 1.5v7A1.5 1.5 0 019.5 20h-4A1.5 1.5 0 014 18.5v-7A1.5 1.5 0 015.5 10zm9-6h4A1.5 1.5 0 0120 5.5v7a1.5 1.5 0 01-1.5 1.5h-4a1.5 1.5 0 01-1.5-1.5v-7A1.5 1.5 0 0114.5 4z" fill="#335EEA" opacity=".3"/></g></svg>            </div>
+
+            <!-- Heading -->
+            <h3>
+              Mejora tu productividad
+            </h3>
+
+            <!-- Text -->
+            <p class="text-muted mb-6 mb-md-0">
+              La automatización de las tareas administrativas permite un manejo inteligente del tiempo.
+            </p>
+
+          </div>
+
+          <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- Icon -->
+            <div class="icon text-primary mb-3">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path d="M17.272 8.685a1 1 0 111.456-1.37l4 4.25a1 1 0 010 1.37l-4 4.25a1 1 0 01-1.456-1.37l3.355-3.565-3.355-3.565zm-10.544 0L3.373 12.25l3.355 3.565a1 1 0 01-1.456 1.37l-4-4.25a1 1 0 010-1.37l4-4.25a1 1 0 011.456 1.37z" fill="#335EEA"/><rect fill="#335EEA" opacity=".3" transform="rotate(15 12 12)" x="11" y="4" width="2" height="16" rx="1"/></g></svg>            </div>
+
+            <!-- Heading -->
+            <h3>
+             Digitaliza tu información
+            </h3>
+
+            <!-- Text -->
+            <p class="text-muted mb-0">
+              Todos los datos sobre tus prospectos,tratos y clientes se encuentran almacenados y centralizados en un solo lugar.
+            </p>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="pt-10 pt-md-12">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+
+            <!-- Heading -->
+            <h2>
+              Nuestros clientes
+            </h2>
+
+            <!-- Text -->
+            <p class="fs-lg text-muted mb-7 mb-md-9">
+              Usado por agentes de seguros de multiples agencias reconocidas
+            </p>
+
+          </div>
+
+        </div> <!-- / .row -->
+        <div class="row">
+          <div class="col-12">
+
+            <!-- Card -->
+            <div class="card card-row shadow-light-lg mb-6">
+              <div class="row gx-0">
+                <div class="col-12 col-md-6">
+
+                  <!-- Slider -->
+                  <div class="card-img-slider" data-flickity='{"fade": true, "imagesLoaded": true, "pageDots": false, "prevNextButtons": false, "asNavFor": "#blogSlider", "draggable": false}'>
+                    <a class="card-img-start w-100 bg-cover" style="background-image: url(Resources/Images/AgenteSeguros1.jpg);" href="#!">
+
+                      <!-- Image (placeholder) -->
+                      <img src="Resources/Images/AgenteSeguros1.jpg" alt="..." class="img-fluid d-md-none invisible">
+
+                    </a>
+                    <a class="card-img-start w-100 bg-cover" style="background-image: url(Resources/Images/AgenteSeguros3.jpg);" href="#!">
+
+                      <!-- Image (placeholder) -->
+                      <img src="Resources/Images/AgenteSeguros3.jpg" alt="..." class="img-fluid d-md-none invisible">
+
+                    </a>
+                  </div>
+
+                  <!-- Shape -->
+                  <div class="shape shape-end shape-fluid-y text-white d-none d-md-block">
+                    <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M116 0H51v172C76 384 0 517 0 517v173h116V0z" fill="currentColor"/></svg>                  </div>
+
+                </div>
+                <div class="col-12 col-md-6 position-md-static">
+
+                  <!-- Slider -->
+                  <div class="position-md-static" data-flickity='{"wrapAround": true, "pageDots": false, "adaptiveHeight": true}' id="blogSlider">
+                    <div class="w-100">
+
+                      <!-- Body -->
+                      <div class="card-body">
+                        <blockquote class="blockquote text-center mb-0">
+
+                          <!-- Brand -->
+                          <div class="row justify-content-center mb-5 mb-md-7">
+                            <div class="col-6 col-sm-4 col-md-7 col-lg-5">
+
+                              <!-- Logo -->
+                              <div class="img-fluid" style="color: #FF5A5F;">
+                                <img src="Resources/Images/Seguro1.png" >
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Text -->
+                          <p class="mb-5 mb-md-7">
+                            “Nunca habíamos usado un CRM tan comodo como Apolo, sus funciones son muy innovadoras.”
+                          </p>
+
+                          <!-- Footer -->
+                          <footer class="blockquote-footer">
+                            <span class="h6 text-uppercase">Isaac Díaz</span>
+                          </footer>
+
+                        </blockquote>
+                      </div>
+
+                    </div>
+                    <div class="w-100">
+
+                      <!-- Body -->
+                      <div class="card-body">
+                        <blockquote class="blockquote text-center mb-0">
+
+                          <!-- Brand -->
+                          <div class="row justify-content-center mb-5 mb-md-7">
+                            <div class="col-6 col-sm-4 col-md-7 col-lg-5">
+
+                              <!-- Logo -->
+                              <div class="img-fluid" style="color: #3F5D87;">
+                                <img src="Resources/Images/Seguro2.png"></image>
+                            </div>
+                          </div> <!-- / .row -->
+
+                          <!-- Text -->
+                          <p class="mb-5 mb-md-7">
+                            "Usar Apolo hizo que mejorara nuestra productividad y nuestras ventas subieron.”
+                          </p>
+
+                          <!-- Footer -->
+                          <footer class="blockquote-footer">
+                            <span class="h6 text-uppercase">Rosalba Garcia</span>
+                          </footer>
+
+                        </blockquote>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div> <!-- / .row -->
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- SHAPE -->
+    <div class="position-relative mt-n8">
+      <div class="shape shape-bottom shape-fluid-x text-gray-200">
+        <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>      </div>
+    </div>
+
+    
+
+     <!-- START PRICING -->
+
+     <section class="pt-9 pt-md-12 bg-gray-200">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h1 class="mt-0"><i class="mdi mdi-tag-multiple"></i></h1>
+                        <h3>Escoge el mejor plan para ti<span class="text-primary"></span></h3>
+                        <p class="text-muted mt-2">Selecciona el plan adecuado para ti mientras tu cartera sigue creciendo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-3">
+                <div class="col-md-4">
+                    <div class="card card-pricing">
+                        <div class="card-body text-center">
+                            <p class="card-pricing-plan-name fw-bold text-uppercase">Libre </p>
+                            <i class="card-pricing-icon dripicons-user text-primary"></i>
+                            <h2 class="card-pricing-price"><span></span></h2>
+                            <ul class="card-pricing-features">
+                                <li>Agenda de hasta 5 contactos.</li>
+                                <li>Soporte técnico vía chat.</li>
+                            </ul>
+                            <button class="btn btn-primary mt-4 mb-2 rounded-pill">Gratis</button>
+                        </div>
+                    </div>
+                    <!-- end Pricing_card -->
+                </div>
+                <!-- end col -->
+
+                <div class="col-md-4">
+                    <div class="card card-pricing card-pricing-recommended">
+                        <div class="card-body text-center">
+                            <div class="card-pricing-plan-tag"></div>
+                            <p class="card-pricing-plan-name fw-bold text-uppercase">Estandar</p>
+                            <i class="card-pricing-icon dripicons-briefcase text-primary"></i>
+                            <ul class="card-pricing-features">
+                                <li>Agenda de 250 contactos.</li>
+                                <li>Soporte técnico vía chat.</li>
+                                <li>Análisis de los datos para encontrar posibles mejoras.</li>
+                            </ul>
+                            <button class="btn btn-primary mt-4 mb-2 rounded-pill">500 MX al mes</button>
+                        </div>
+                    </div>
+                    <!-- end Pricing_card -->
+                </div>
+                <!-- end col -->
+
+                <div class="col-md-4">
+                    <div class="card card-pricing">
+                        <div class="card-body text-center">
+                            <p class="card-pricing-plan-name fw-bold text-uppercase">Profesional</p>
+                            <i class="card-pricing-icon dripicons-store text-primary"></i>
+                            <h2 class="card-pricing-price"><span></span></h2>
+                            <ul class="card-pricing-features">
+                              <li>Agenda de 250 contactos.</li>
+                              <li>Soporte técnico vía chat.</li>
+                              <li>Análisis de los datos para encontrar posibles mejoras.</li>
+                              <li>Análisis de posibles prospectos.</li>
+                            </ul>
+                            <button class="btn btn-primary mt-4 mb-2 rounded-pill">1500 MX al mes</button>
+                        </div>
+                    </div>
+                    <!-- end Pricing_card -->
+                </div>
+                <!-- end col -->
+
+            </div>
+
+        </div>
+    </section>
+    <!-- END PRICING -->
+
+    <!-- SHAPE -->
+    <div class="position-relative mt-n15">
+      <div class="shape shape-bottom shape-fluid-x text-dark">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="pt-15 bg-dark">
+      <div class="container pt-8 pt-md-11">
+        <div class="row">
+          <div class="col-12 col-md-6">
+
+            <!-- Item -->
+            <div class="d-flex">
+
+              <!-- Badge -->
+              <div class="badge badge-lg badge-rounded-circle bg-success">
+                <span>?</span>
+              </div>
+
+              <div class="ms-5">
+
+                <!-- Heading -->
+                <h4 class="text-white">
+                  ¿Puedo usar Apolo para administrar mi agenda?
+                </h4>
+
+                <!-- Text -->
+                <p class="text-muted mb-6 mb-md-8">
+                  ¡Claro! Apolo es un CRM enfocado en la administración de tu información.
+                </p>
+
+              </div>
+
+            </div>
+
+            <!-- Item -->
+            <div class="d-flex">
+
+              <!-- Badge -->
+              <div class="badge badge-lg badge-rounded-circle bg-success">
+                <span>?</span>
+              </div>
+
+              <div class="ms-5">
+
+                <!-- Heading -->
+                <h4 class="text-white">
+                  ¿Tengo actualizaciones grátis?
+                </h4>
+
+                <!-- Text -->
+                <p class="text-muted mb-6 mb-md-0">
+                  Sí, actualizamos el sistema de manera constante para mejorar la experiencia de los usuarios.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6">
+
+            <!-- Item -->
+            <div class="d-flex">
+
+              <!-- Badge -->
+              <div class="badge badge-lg badge-rounded-circle bg-success">
+                <span>?</span>
+              </div>
+
+              <div class="ms-5">
+
+                <!-- Heading -->
+                <h4 class="text-white">
+                  ¿Puedo cambiar mi plan en caso de que haya elegido uno incorrecto para mí?
+                </h4>
+
+                <!-- Text -->
+                <p class="text-muted mb-6 mb-md-8">
+                  Siempre puedes cambiar el plan de tu cuenta, el cargo se facturará a final de mes con el plan que hayas elegido.
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- CTA -->
+    <section class="py-8 py-md-11 bg-dark">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+
+            <!-- Badge -->
+            <span class="badge rounded-pill bg-gray-700-soft mb-4">
+              <span class="h6 fw-bold text-uppercase">Empieza ahora</span>
+            </span>
+
+            <!-- Heading -->
+            <h1 class="display-4 text-white">
+              Consigue Apolo y aprovecha de todos sus beneficios.
+            </h1>
+
+            <!-- Text -->
+            <p class="fs-lg text-muted mb-6 mb-md-8">
+              Deja de malgastar tu tiempo tratando con tu información desorganizada y dispersa en todas las aplicaciones que usas, usa Apolo y organiza toda tu información en una sola plataforma.
+            </p>
+
+            <!-- Button -->
+            <a href="#" target="_blank" class="btn btn-success lift">
+              Comprar ahora <i class="fe fe-arrow-right"></i>
+            </a>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- SHAPE -->
+    <div class="position-relative">
+      <div class="shape shape-bottom shape-fluid-x text-gray-200">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-8 py-md-11 bg-gray-200">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 col-lg-3">
+    
+            <!-- Brand -->
+            <img src="Resources/Images/LogoApolo.png" alt="..." class="footer-brand img-fluid mb-2">
+    
+            <!-- Text -->
+            <p class="text-gray-700 mb-2">
+               Tu tiempo es nuestra prioridad
+            </p>
+    
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+    
+            <!-- Heading -->
+            <h6 class="fw-bold text-uppercase text-gray-700">
+              Productos
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Apolo
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Greendy
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+    
+            <!-- Heading -->
+            <h6 class="fw-bold text-uppercase text-gray-700">
+              Servicios
+            </h6>
+    
+            <!-- List -->
+            <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Documentación para desarrolladores
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Changelog
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Kit de desarrolladores
+                </a>
+              </li>
+            </ul>
+    
+          </div>
+          <div class="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-0">
+    
+            <!-- Heading -->
+            <h6 class="fw-bold text-uppercase text-gray-700">
+              Legal
+            </h6>
+            <ul class="list-unstyled text-muted mb-0">
+              <li class="mb-3">
+                <a href="#!" class="text-reset">
+                  Aviso Legal
+                </a>
+              </li>
+            </ul>
+  
+    
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+    
+    
+            <!-- List -->
+           
+    
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="https://landkit.goodthemes.co/assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="https://landkit.goodthemes.co/assets/js/theme.bundle.js"></script>
+
+  </body>
+</html>
