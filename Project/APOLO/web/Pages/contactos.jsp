@@ -1,9 +1,3 @@
-<%-- 
-    Document   : contactos
-    Created on : 5/12/2021, 11:58:11 PM
-    Author     : devil
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

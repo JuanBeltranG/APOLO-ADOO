@@ -19,7 +19,7 @@ public class ConexionBD {
         String server = "localhost";
         String baseDatos = "APOLO";
         String usr = "root";
-        String pswd = "28062001**gar";
+        String pswd = "n0m3l0";
         String url = "jdbc:mysql://"+server+"/"+baseDatos;
 
         try {
