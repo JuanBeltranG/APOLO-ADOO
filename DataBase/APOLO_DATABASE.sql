@@ -239,6 +239,7 @@ delimiter **
 create procedure sp_elimina_cita(in Id_Citau int)
 begin
 delete from apolo.cita where binary apolo.cita.Id_Cita = Id_Citau;
+select 1;
 end;**
 delimiter ;
 /*---------------------------------------------------------------------------*/
@@ -249,6 +250,7 @@ create procedure sp_actualiza_cita(in Id_Citau int, in Tipou varchar(50), in Fec
 begin
 update apolo.cita set apolo.cita.Tipo_Cita = Tipou, apolo.cita.Fecha = Fechau, apolo.cita.Direccion_Cita = Direccionu,
 	apolo.cita.Proposito_Cita = Propositou, apolo.cita.Notas_Import = Notasu where binary apolo.cita.Id_Cita = Id_Citau;
+select 1;
 end;**
 delimiter ;
 /*---------------------------------------------------------------------------*/
