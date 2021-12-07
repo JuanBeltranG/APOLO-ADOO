@@ -6,6 +6,7 @@
 package Controlers;
 
 import DAO.ContactoDAO;
+import Models.AgenteSeguros;
 import Models.Contacto;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -75,6 +77,9 @@ public class RegistroContacto extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        
+        
+        //Obtenemos los datos provenientes del formulario 
         String Nombre= request.getParameter("Nombre"); 
         String Apat= request.getParameter("ApellidoP"); 
         String Amat= request.getParameter("ApellidoM"); 
@@ -95,7 +100,34 @@ public class RegistroContacto extends HttpServlet {
         
         ContactoDAO metodosContacto = new ContactoDAO();
         
+        //Obtenemos el correo del agente de seguros que ya estaba previamente cargado en la sesion
+        HttpSession session = request.getSession(true);
+        AgenteSeguros Agente= (AgenteSeguros)session.getAttribute("usuario");
         
+        //Guardamos el nuevo contacto
+        boolean RegistroExitoso = metodosContacto.AltaContacto(Agente.getCorreo(), ContactoGuardar);
+        
+        if(RegistroExitoso){
+            
+            try (PrintWriter out = response.getWriter()) {
+               out.println("<script>alert('Se registro exitosamente al contacto');window.location = 'Pages/board.html'; </script>");
+            }
+            
+            request.getRequestDispatcher("Pages/board.html").forward(request, response);
+            //response.sendRedirect("ConsultaContactos");
+            
+            
+        }else{
+            
+            try (PrintWriter out = response.getWriter()) {
+                out.println("<script>alert('Parece que ocurrio un error, intenta mas tarde');window.location = 'Pages/agenda.html'; </script>");
+            }
+            
+            request.getRequestDispatcher("Pages/agenda.html").forward(request, response); 
+            
+            
+            
+        }
         
         
         

@@ -12,6 +12,8 @@ package Models;
 public class Contacto {
     
 
+    private int Id_Contacto;
+    private int Id_Agente;
     private String Nombre;
     private String Apat;
     private String Amat;
@@ -43,9 +45,42 @@ public class Contacto {
         this.AntecePenal = AntecePenal;
         this.AnteceMed = AnteceMed;
     }
-    
-     
 
+    public Contacto(int Id_Contacto, int Id_Agente, String Nombre, String Apat, String Amat, String Correo, String Direccion, String Telefono, int edad, String Sexo, String EstadoCivil, int PolizasActivas, String AnteceFinanci, String AntecePenal, String AnteceMed) {
+        this.Id_Contacto = Id_Contacto;
+        this.Id_Agente = Id_Agente;
+        this.Nombre = Nombre;
+        this.Apat = Apat;
+        this.Amat = Amat;
+        this.Correo = Correo;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.edad = edad;
+        this.Sexo = Sexo;
+        this.EstadoCivil = EstadoCivil;
+        this.PolizasActivas = PolizasActivas;
+        this.AnteceFinanci = AnteceFinanci;
+        this.AntecePenal = AntecePenal;
+        this.AnteceMed = AnteceMed;
+    }
+
+    
+    public int getId_Contacto() {
+        return Id_Contacto;
+    }
+
+    public void setId_Contacto(int Id_Contacto) {
+        this.Id_Contacto = Id_Contacto;
+    }
+
+    public int getId_Agente() {
+        return Id_Agente;
+    }
+
+    public void setId_Agente(int Id_Agente) {
+        this.Id_Agente = Id_Agente;
+    }
+    
     public String getNombre() {
         return Nombre;
     }

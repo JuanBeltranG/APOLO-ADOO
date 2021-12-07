@@ -1,10 +1,21 @@
+<%-- 
+    Document   : AgendaContactos
+    Created on : 7/12/2021, 02:32:18 AM
+    Author     : juan-
+--%>
+
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="Models.Contacto"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
     <head>
         <meta name="viewport" content="width=device-width" />
         <meta charSet="utf-8" />
-        <link rel="shortcut icon" href="../Resources/Icon/Apolo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="Resources/Icon/Apolo.png" type="image/x-icon" />
         <title>Apolo - Tablero</title>
         <meta name="next-head-count" content="4" />
         <link rel="preload" href="https://dashkit-react.vercel.app/_next/static/css/86954328a650be218e9c.css" as="style" />
@@ -21,6 +32,45 @@
         <script src="https://dashkit-react.vercel.app/_next/static/chunks/pages/index-4f1ea3239c5878d6bcc9.js" defer=""></script>
         <script src="https://dashkit-react.vercel.app/_next/static/nrtWV97mGey8aZ6Gr9nFv/_buildManifest.js" defer=""></script>
         <script src="https://dashkit-react.vercel.app/_next/static/nrtWV97mGey8aZ6Gr9nFv/_ssgManifest.js" defer=""></script>
+   
+    <%
+        
+    List<Contacto> TodosContactos;
+    
+    TodosContactos = (List<Contacto>)request.getAttribute("TodosContactos");
+    
+    int numeroContactos = 0;
+    ArrayList<Contacto> ContactosAdesplegar = new ArrayList<Contacto>();
+    Contacto con;
+    
+
+    for(Contacto c: TodosContactos){
+        
+        con = new Contacto(
+        c.getId_Contacto(),
+        c.getId_Agente(),
+        c.getNombre(),
+        c.getApat(),
+        c.getAmat(),
+        c.getCorreo(),
+        c.getDireccion(),
+        c.getTelefono(),
+        c.getEdad(),
+        c.getSexo(),
+        c.getEstadoCivil(),
+        c.getPolizasActivas(),
+        c.getAnteceFinanci(),
+        c.getAntecePenal(),
+        c.getAnteceMed()
+        );
+        
+        ContactosAdesplegar.add(con);
+        numeroContactos++;
+        
+    }
+    
+    %>
+    
     </head>
 
 <body>
@@ -28,7 +78,7 @@
         <nav class="navbar-vertical fixed-start navbar navbar-expand-md navbar-light">
             <div class="container-fluid"><button type="button" aria-label="Toggle navigation"
                     class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button><a href="board.html"
-                    class="navbar-brand"><img class="navbar-brand-img" src="../Resources/Images/LogoApolo.png" alt="..." /></a>
+                    class="navbar-brand"><img class="navbar-brand-img" src="Resources/Images/LogoApolo.png" alt="..." /></a>
                 <div class="d-md-none dropdown">
                     <div class="avatar avatar-sm avatar-online dropdown-toggle" id="react-aria5016654841-32"
                         aria-expanded="false" role="button"><img class="avatar-img rounded-circle"
@@ -49,7 +99,7 @@
                     </form>
                     <div>
                         <div class="navbar-nav">
-                            <div class="nav-item"><a href="board.html" role="button" class="nav-link" tabindex="0"><svg width="17"
+                            <div class="nav-item"><a href="Pages/board.html" role="button" class="nav-link" tabindex="0"><svg width="17"
                                         height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                         class="feather feather-home ">
@@ -65,7 +115,7 @@
                                 
                             </div>
                             <div class="nav-item">
-                                <form action="../ConsultaContactos" method="post">
+                                <form action="ConsultaContactos" method="post">
 
                                <a role="button" class="nav-link" tabindex="0">
                                   
@@ -81,7 +131,7 @@
                                </a>
                                 </form>
                             </div>
-                            <div class="nav-item"><a href="estadisticas.html" data-rr-ui-event-key="/widgets"
+                            <div class="nav-item"><a href="Pages/estadisticas.html" data-rr-ui-event-key="/widgets"
                                     class="nav-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" class="feather feather-grid ">
@@ -92,7 +142,7 @@
                                             <rect x="3" y="14" width="7" height="7"></rect>
                                         </g>
                                     </svg>Estadisticas</a></div>
-                            <div class="nav-item"><a href="cuenta.html" role="button" class="nav-link" tabindex="0"><svg width="17"
+                            <div class="nav-item"><a href="Pages/cuenta.html" role="button" class="nav-link" tabindex="0"><svg width="17"
                                         height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                         class="feather feather-user ">
@@ -122,7 +172,7 @@
                         <div class="dropup">
                             <div class="avatar avatar-sm avatar-online dropdown-toggle" id="react-aria5016654841-33"
                                 aria-expanded="false" role="button"><img class="avatar-img rounded-circle"
-                                    src="../Resources/Images/perfilApolo.jpg" alt="..." /></div>
+                                    src="Resources/Images/perfilApolo.jpg" alt="..." /></div>
                         </div><a class="navbar-user-link" role="button">
                             <div class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -151,7 +201,7 @@
                                         <div role="group" class="nav d-inline-flex btn-group">
                                                     
                                         </div>
-                                        <a href="contactos.jsp">
+                                        <a href="Pages/contactos.jsp">
                                         <button type="button" class="ms-2 btn btn-primary">Añadir contacto</button>
                                         </a>
                                     </div>
@@ -335,19 +385,27 @@
                                             <th colSpan="1" title="Toggle SortBy" style="cursor:pointer"
                                                 class="is-sortable">Nombre</th>
                                             <th colSpan="1" title="Toggle SortBy" style="cursor:pointer"
-                                                class="is-sortable">Trabajo</th>
+                                                class="is-sortable">Polizas Act.</th>
                                             <th colSpan="1" title="Toggle SortBy" style="cursor:pointer"
                                                 class="is-sortable">Email</th>
                                             <th colSpan="1" title="Toggle SortBy" style="cursor:pointer"
                                                 class="is-sortable">Numero de telefono</th>
                                             <th colSpan="1" title="Toggle SortBy" style="cursor:pointer"
-                                                class="is-sortable">Servicio</th>
+                                                class="is-sortable">Tipo Contacto</th>
                                             <th colSpan="1" title="Toggle SortBy" style="cursor:pointer"
-                                                class="is-sortable">Compañia</th>
+                                                class="is-sortable">Edad</th>
                                             <th colSpan="1"> </th>
                                         </tr>
                                     </thead>
                                     <tbody class="fs-base">
+                                        
+            <%
+            
+            for(int i=0; i< ContactosAdesplegar.size(); i++){
+                
+            Contacto contactoDespliega = ContactosAdesplegar.get(i);
+            
+            %>
                                         <tr>
                                             <td>
                                                 <div>
@@ -356,18 +414,31 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-1.jpg" alt="Dianna Smiley" />
-                                                </div><a class="text-reset" href="/profile-posts">Dianna Smiley</a>
+                                                <%
+                                                String imagenContacto;
+                                                if(contactoDespliega.getSexo().equals("Masculino")){
+                                                    imagenContacto="Resources/Images/carita-hombre.png";
+                                                }else if(contactoDespliega.getSexo().equals("Femenino")){
+                                                    imagenContacto="Resources/Images/carita-mujer.png";
+                                                }else{
+                                                    imagenContacto="Resources/Images/carita-otro.png";
+                                                }
+                                                
+                                                
+                                                %>
+                                                <div class="avatar avatar-xs me-2">
+                                                    <img class="avatar-img rounded-circle" src="<%out.print(imagenContacto);%>" alt="Dianna Smiley" />
+                                                </div>
+                                                
+                                                <a class="text-reset" href="/profile-posts"><% out.print(contactoDespliega.getNombre()) ;%> <%out.print(contactoDespliega.getApat() );%></a>
                                             </td>
-                                            <td>Diseñadora</td>
+                                            <td><% out.print(contactoDespliega.getPolizasActivas()) ;%> </td>
                                             <td><a class="text-reset"
-                                                    href="mailto:diana.smiley@company.com">diana.smiley@company.com</a>
+                                                    href="mailto:diana.smiley@company.com"><% out.print(contactoDespliega.getCorreo()) ; %></a>
                                             </td>
-                                            <td><a class="text-reset" href="tel:9885683568">9885683568</a></td>
-                                            <td><span class="badge bg-soft-danger">1/10</span></td>
-                                            <td>Twitter</td>
+                                            <td><a class="text-reset" href="tel:9885683568"><% out.print(contactoDespliega.getTelefono()) ;%></a></td>
+                                            <td><span >Cliente</span></td>
+                                            <td><% out.print(contactoDespliega.getEdad()) ;%> </td>
                                             <td>
                                                 <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
                                                         id="react-aria5016654841-16" aria-expanded="false"
@@ -383,317 +454,12 @@
                                                         </svg></span></div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-2.jpg" alt="Ab Hadley" />
-                                                </div><a class="text-reset" href="/profile-posts">Ab Hadley</a>
-                                            </td>
-                                            <td>Programador</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:ab.hadley@company.com">ab.hadley@company.com</a></td>
-                                            <td><a class="text-reset" href="tel:6504309876">6504309876</a></td>
-                                            <td><span class="badge bg-soft-success">8/10</span></td>
-                                            <td>Google</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-17" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-3.jpg" alt="Adolfo Hess" />
-                                                </div><a class="text-reset" href="/profile-posts">Adolfo Hess</a>
-                                            </td>
-                                            <td>Administador</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:adolfo.hess@company.com">adolfo.hess@company.com</a>
-                                            </td>
-                                            <td><a class="text-reset" href="tel:9686821364">9686821364</a></td>
-                                            <td><span class="badge bg-soft-success">7/10</span></td>
-                                            <td>Google</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-18" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-4.jpg" alt="Daniela Dewitt" />
-                                                </div><a class="text-reset" href="/profile-posts">Daniela Dewitt</a>
-                                            </td>
-                                            <td>Programadora</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:daniela.dewitt@company.com">daniela.dewitt@company.com</a>
-                                            </td>
-                                            <td><a class="text-reset" href="tel:6504309876">6504309876</a></td>
-                                            <td><span class="badge bg-soft-warning">4/10</span></td>
-                                            <td>Twitch</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-19" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-5.jpg" alt="Miyah Myles" />
-                                                </div><a class="text-reset" href="/profile-posts">Miyah Myles</a>
-                                            </td>
-                                            <td>Administradora</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:miyah.myles@company.com">miyah.myles@company.com</a>
-                                            </td>
-                                            <td><a class="text-reset" href="tel:9351658435">9351658435</a></td>
-                                            <td><span class="badge bg-soft-danger">3/10</span></td>
-                                            <td>Facebook</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-20" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-6.jpg" alt="Ryu Duke" /></div>
-                                                <a class="text-reset" href="/profile-posts">Ryu Duke</a>
-                                            </td>
-                                            <td>Diseñador</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:ryu.duke@company.com">ryu.duke@company.com</a></td>
-                                            <td><a class="text-reset" href="tel:9375960152">9375960152</a></td>
-                                            <td><span class="badge bg-soft-warning">6/10</span></td>
-                                            <td>Netflix</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-21" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-7.jpg" alt="Glen Rouse" />
-                                                </div><a class="text-reset" href="/profile-posts">Glen Rouse</a>
-                                            </td>
-                                            <td>Diseñador</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:glen.rouse@company.com">glen.rouse@company.com</a></td>
-                                            <td><a class="text-reset" href="tel:6897984635">6897984635</a></td>
-                                            <td><span class="badge bg-soft-success">9/10</span></td>
-                                            <td>Netflix</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-22" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-1.jpg" alt="Daniela Dewitt" />
-                                                </div><a class="text-reset" href="/profile-posts">Daniela Dewitt</a>
-                                            </td>
-                                            <td>Desarrolladora</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:daniela.dewitt@company.com">daniela.dewitt@company.com</a>
-                                            </td>
-                                            <td><a class="text-reset" href="tel:9375688946">9375688946</a></td>
-                                            <td><span class="badge bg-soft-success">7/10</span></td>
-                                            <td>Uber</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-23" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-2.jpg" alt="Adolfo Hess" />
-                                                </div><a class="text-reset" href="/profile-posts">Adolfo Hess</a>
-                                            </td>
-                                            <td>Abogado</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:adolfo.hess@company.com">adolfo.hess@company.com</a>
-                                            </td>
-                                            <td><a class="text-reset" href="tel:5684980365">5684980365</a></td>
-                                            <td><span class="badge bg-soft-success">10/10</span></td>
-                                            <td>Amazon</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-24" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div>
-                                                    <div style="cursor:pointer" class=""><input type="checkbox"
-                                                            class="form-check-input" /></div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="avatar avatar-xs me-2"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-3.jpg" alt="Glen Rouse" />
-                                                </div><a class="text-reset" href="/profile-posts">Glen Rouse</a>
-                                            </td>
-                                            <td>Contador</td>
-                                            <td><a class="text-reset"
-                                                    href="mailto:glen.rouse@company.com">glen.rouse@company.com</a></td>
-                                            <td><a class="text-reset" href="tel:9681356458">9681356458</a></td>
-                                            <td><span class="badge bg-soft-warning">6/10</span></td>
-                                            <td>Twitch</td>
-                                            <td>
-                                                <div class="dropdown"><span class="dropdown-ellipses dropdown-toggle"
-                                                        id="react-aria5016654841-25" aria-expanded="false"
-                                                        role="button"><svg width="17" height="17" viewBox="0 0 24 24"
-                                                            fill="none" stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-more-vertical ">
-                                                            <g>
-                                                                <circle cx="12" cy="12" r="1"></circle>
-                                                                <circle cx="12" cy="5" r="1"></circle>
-                                                                <circle cx="12" cy="19" r="1"></circle>
-                                                            </g>
-                                                        </svg></span></div>
-                                            </td>
-                                        </tr>
+                <%
+                
+                }
+                
+                %>                      
+
                                     </tbody>
                                 </table>
                             </div>
@@ -734,7 +500,7 @@
             </div>
         </div>
         <div class="main-content">
-            <div class="container-fluid">}
+            <div class="container-fluid">
                 <div class="justify-content-center row">
 
                 </div>

@@ -3,7 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/juan-/Desktop/APOLO/Project/APOLO/web/Pages/SignIn.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/cuenta.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/src/java/Controlers/UserLogin.java</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/AgendaContactos.jsp</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/src/java/Controlers/RegistroContacto.java</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/board.jsp</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/board.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/index.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/estadisticas.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/agenda.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/contactos.jsp</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/LogIn.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/SignIn.html</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/src/java/Models/Contacto.java</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/src/java/Controlers/UserRegister.java</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/web/Pages/administraCuenta.jsp</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/src/java/DAO/ContactoDAO.java</file>
+            <file>file:/C:/Users/juan-/Desktop/APOLO-GOD/Project/APOLO/src/java/Controlers/ConsultaContactos.java</file>
         </group>
     </open-files>
 </project-private>

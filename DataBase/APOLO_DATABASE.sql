@@ -105,15 +105,15 @@ end**
 
 
 
+use APOLO;
+drop procedure if exists ConsultaContactos;
+delimiter **
+create procedure ConsultaContactos( in IDAgente int(3))
+begin
+ 
+select * from Contacto where IDAgente = Id_Agente; 
 
-
-
-
-
-
-
-
-
+end**
 
 
 
@@ -131,7 +131,7 @@ in ApellidoPC varchar(30),
 in ApellidoMC varchar(30),
 in CorreoC varchar(60),
 in DireccionC varchar(500), 
-in TelefonoC int(10), 
+in TelefonoC varchar(20), 
 in EdadC int(3),
 in SexoC varchar(30),
 in Estado_CivilC varchar(100),

@@ -1,41 +1,46 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Controlers;
 
-import DAO.AgenteSegurosDAO;
+import DAO.ContactoDAO;
 import Models.AgenteSeguros;
+import Models.Contacto;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author juan-
  */
-@WebServlet(name = "UserRegister", urlPatterns = {"/UserRegister"})
-public class UserRegister extends HttpServlet {
+@WebServlet(name = "ConsultaContactos", urlPatterns = {"/ConsultaContactos"})
+public class ConsultaContactos extends HttpServlet {
 
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UserRegister</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UserRegister at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
             
-            
+        
+        
         }
     }
 
@@ -52,41 +57,37 @@ public class UserRegister extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+   
         
-        String NombreAgente= request.getParameter("Nombre"); 
-        String CorreoAgente= request.getParameter("Correo"); 
-        String ContraAgente= request.getParameter("Contra"); 
-        String TelefonoAgente = request.getParameter("Telefono");
-        
-        
-        AgenteSeguros GuardaAgente = new AgenteSeguros(NombreAgente, CorreoAgente,ContraAgente, TelefonoAgente);
-        
-        AgenteSegurosDAO metodosAgente = new AgenteSegurosDAO();
-        
-        boolean altaExitosa = metodosAgente.AltaAgente(GuardaAgente);
-        
-        if(altaExitosa){
-            
-            try (PrintWriter out = response.getWriter()) {
-               out.println("<script>alert('Registro exitoso');window.location = 'Pages/cuenta.html'; </script>");
-            }
-            
-            
-        }
-        
-        
-        
-        
+
         processRequest(request, response);
+        
+        
     }
 
-    
-    
-    
-    
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        //Obtenemos el correo del agente de seguros que ya estaba previamente cargado en la sesion
+        HttpSession session = request.getSession(true);
+        AgenteSeguros Agente= (AgenteSeguros)session.getAttribute("usuario");
+        
+        ContactoDAO metodosContacto = new ContactoDAO();
+        
+        List<Contacto> ContactosAgente = metodosContacto.ConsultaContactos(Agente.getID());
+        request.setAttribute("TodosContactos", ContactosAgente);
+        request.getRequestDispatcher("Pages/AgendaContactos.jsp").forward(request, response);
+        
+
         processRequest(request, response);
     }
 
