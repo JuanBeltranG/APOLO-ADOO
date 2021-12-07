@@ -183,3 +183,43 @@ begin
 			select idper as usuario , msj as mensaje, CorreoC as correo ;
 		end if;
 end;**
+
+
+/*---------------------------------------------------------------------------*/
+drop procedure if exists sp_registra_cita;
+delimiter **
+create procedure sp_registra_cita(in Id_Agenteu int, in Id_Contactou int, in Tipou varchar(50), in Fechau date,
+	in Direccionu varchar(100), in Propositou varchar(100), in Notasu varchar(200))
+begin
+insert into apolo.cita values (0, Id_Contactou, Id_Agenteu, Tipou, Fechau, Direccionu, Propositou, Notasu);
+select last_insert_id() from apolo.cita;
+end;**
+delimiter ;
+/*---------------------------------------------------------------------------*/
+drop procedure if exists sp_elimina_cita;
+delimiter **
+create procedure sp_elimina_cita(in Id_Citau int)
+begin
+delete from apolo.cita where binary apolo.cita.Id_Cita = Id_Citau;
+end;**
+delimiter ;
+/*---------------------------------------------------------------------------*/
+drop procedure if exists sp_actualiza_cita;
+delimiter **
+create procedure sp_actualiza_cita(in Id_Citau int, in Tipou varchar(50), in Fechau date, in Direccionu varchar(100),
+	in Propositou varchar(100), in Notasu varchar(200))
+begin
+update apolo.cita set apolo.cita.Tipo_Cita = Tipou, apolo.cita.Fecha = Fechau, apolo.cita.Direccion_Cita = Direccionu,
+	apolo.cita.Proposito_Cita = Propositou, apolo.cita.Notas_Import = Notasu where binary apolo.cita.Id_Cita = Id_Citau;
+end;**
+delimiter ;
+/*---------------------------------------------------------------------------*/
+drop procedure if exists sp_trae_citas;
+delimiter **
+create procedure sp_trae_citas(in Id_Agenteu int)
+begin
+select * from apolo.cita where apolo.cita.Id_Agente = Id_Agenteu;
+end;**
+delimiter ;
+/*---------------------------------------------------------------------------*/
+describe cita;
