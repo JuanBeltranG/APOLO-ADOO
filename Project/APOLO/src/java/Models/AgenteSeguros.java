@@ -11,16 +11,42 @@ package Models;
  */
 public class AgenteSeguros {
     
+    private int ID;
     private String Nombre;
     private String Correo;
     private String Contra;
     private String Telefono;
+    private String sexo;
+    private String DirOficina;
+    
 
     public AgenteSeguros(String Nombre, String Correo, String Contra, String Telefono) {
         this.Nombre = Nombre;
         this.Correo = Correo;
         this.Contra = Contra;
         this.Telefono = Telefono;
+    }
+
+    public AgenteSeguros(int ID, String Nombre, String Correo, String Contra, String Telefono, String sexo, String DirOficina) {
+        this.ID = ID;
+        this.Nombre = Nombre;
+        this.Correo = Correo;
+        this.Contra = Contra;
+        this.Telefono = Telefono;
+        this.sexo = sexo;
+        this.DirOficina = DirOficina;
+    }
+
+    
+    
+    
+    
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
     
     

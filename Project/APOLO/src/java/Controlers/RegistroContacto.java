@@ -5,6 +5,7 @@
  */
 package Controlers;
 
+import DAO.ContactoDAO;
 import Models.Contacto;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -91,6 +92,8 @@ public class RegistroContacto extends HttpServlet {
         
         
         Contacto ContactoGuardar = new Contacto(Nombre, Apat,Amat, Correo, Direccion,Telefono, edad,Sexo,EstadoCivil,PolizasActivas,AnteceFinanci,AntecePenal,AnteceMed );
+        
+        ContactoDAO metodosContacto = new ContactoDAO();
         
         
         
