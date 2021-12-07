@@ -183,67 +183,67 @@
                                                 <fieldset>
                                                     <legend>Detalles de contacto</legend>
 
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="ApellidoP">Apellido Paterno</label>
                                                         <input type="text" class="form-control" name="ApellidoP" id="ApellidoP" placeholder="Apellido Paterno">
                                                     </div>
 
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="ApellidoM">Apellido Materno</label>
                                                         <input type="text" class="form-control" name="ApellidoM" id="ApellidoM" placeholder="Apellido Materno">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Nombre">Nombre(s)</label>
                                                         <input type="text" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre">
                                                     </div>
 
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Correo">Email</label>
                                                         <input type="email" class="form-control" name="Correo" id="Correo" placeholder="Email">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Direccion">Direccion</label>
                                                         <input type="text" class="form-control" name="Direccion" id="Direccion" placeholder="Direccion">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Telefono">Telefono</label>
                                                         <input type="text" class="form-control" name="Telefono" id="Telefono" placeholder="55-5555-5555">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Edad">Edad</label>
                                                         <input type="number" class="form-control" name="Edad" id="Edad" placeholder="Edad">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Sexo">Sexo</label>
                                                         <input type="text" class="form-control" name="Sexo" id="Sexo" placeholder="Sexo">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Estado_Civil">Estado Civil</label>
                                                         <input type="text" class="form-control" name="Estado_Civil" id="Estado_Civil" placeholder="Estado Civil">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Polizas_Activas">Polizas Activas</label>
                                                         <input type="number" class="form-control" name="Polizas_Activas" id="Polizas_Activas" placeholder="Polizas Activas">
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Antecedentes_Financieros">Antecedentes Financieros</label>
                                                         <textarea class="form-control" name="Antecedentes_Financieros" id="Antecedentes_Financieros"></textarea>
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Antecedentes_Penales">Antecedentes Penales</label>
                                                         <textarea class="form-control" name="Antecedentes_Penales" id="Antecedentes_Penales"></textarea>
                                                     </div>
                                                     
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-12">
                                                         <label for="Antecedentes_Medicos">Antecedentes Medicos</label>
                                                         <textarea class="form-control" name="Antecedentes_Medicos" id="Antecedentes_Medicos"></textarea>
                                                     </div>
