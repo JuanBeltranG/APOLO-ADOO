@@ -83,6 +83,44 @@ values(nombreAgen,correoAgen, contraAgen, telefonoAgen );
 
 end**
 
+use APOLO;
+drop procedure if exists ConsultaRegistro;
+delimiter **
+create procedure ConsultaRegistro( in correoAgen varchar(60), in contraAgen varchar(60))
+begin
+ 
+select * from AgenteSeguros where correoAgen = Email and contraAgen = Contra;
+
+end**
+
+use APOLO;
+drop procedure if exists ConsultaDatosAgente;
+delimiter **
+create procedure ConsultaDatosAgente( in correoAgen varchar(60), in contraAgen varchar(60))
+begin
+ 
+select * from AgenteSeguros where correoAgen = Email and contraAgen = Contra;
+
+end**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 drop procedure if exists GuardaContacto;
 delimiter **

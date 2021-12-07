@@ -5,13 +5,17 @@
  */
 package Controlers;
 
+import DAO.AgenteSegurosDAO;
+import Models.AgenteSeguros;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -62,6 +66,36 @@ public class UserLogin extends HttpServlet {
         String Correo= request.getParameter("Correo"); 
         String Contra= request.getParameter("Contra");
         
+        AgenteSegurosDAO consultaAgente = new AgenteSegurosDAO();
+        
+        boolean registrado= consultaAgente.ConsultaUsuarioRegistrado(Correo, Contra);
+        
+        if(registrado){
+            
+            /*Iniciamos sesion*/
+            AgenteSeguros agenteLogeado = consultaAgente.ConsultaAgente(Correo, Contra);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("usuario", agenteLogeado);
+            
+            
+            
+            try (PrintWriter out = response.getWriter()) {
+                out.println("<script>alert('Bienvenido "+agenteLogeado.getNombre()+"');window.location = 'Pages/board.html'; </script>");
+            }
+            
+            request.getRequestDispatcher("Pages/board.html").forward(request, response); 
+            
+        }else{
+            
+            try (PrintWriter out = response.getWriter()) {
+                out.println("<script>alert('El correo o contraseña no son validos');window.location = 'Pages/LogIn.html'; </script>");
+
+            }
+            request.getRequestDispatcher("Pages/LogIn.html").forward(request, response); 
+        }
+        
+        
+        
         
         
         
@@ -83,6 +117,8 @@ public class UserLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
         processRequest(request, response);
     }
 
