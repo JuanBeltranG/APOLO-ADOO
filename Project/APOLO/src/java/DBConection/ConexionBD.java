@@ -19,8 +19,14 @@ public class ConexionBD {
         String server = "localhost";
         String baseDatos = "APOLO";
         String usr = "root";
+<<<<<<< HEAD
         String pswd = "28062001**gar";
         String url = "jdbc:mysql://"+server+"/"+baseDatos;
+=======
+        String pswd = "dany1905";
+        //String url = "jdbc:mysql://"+server+"/"+baseDatos;
+        String url = "jdbc:mysql://"+server+"/"+baseDatos+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+>>>>>>> b3a68657f44058286668ec9dce19acb795f5c647
 
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();

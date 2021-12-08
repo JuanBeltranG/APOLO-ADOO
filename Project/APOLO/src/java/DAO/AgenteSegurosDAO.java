@@ -49,7 +49,7 @@ public class AgenteSegurosDAO {
             altaExitosa = true;
 
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("EL ERROR DE LA BASE DE DATOS ES"+ ex);
         }
 
         return altaExitosa;
