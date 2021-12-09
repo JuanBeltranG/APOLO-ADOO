@@ -57,7 +57,15 @@ public class ConsultaContactos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-   
+        //Obtenemos el correo del agente de seguros que ya estaba previamente cargado en la sesion
+        HttpSession session = request.getSession(true);
+        AgenteSeguros Agente= (AgenteSeguros)session.getAttribute("usuario");
+        
+        ContactoDAO metodosContacto = new ContactoDAO();
+        
+        List<Contacto> ContactosAgente = metodosContacto.ConsultaContactos(Agente.getID());
+        request.setAttribute("TodosContactos", ContactosAgente);
+        request.getRequestDispatcher("Pages/AgendaContactos.jsp").forward(request, response);
         
 
         processRequest(request, response);

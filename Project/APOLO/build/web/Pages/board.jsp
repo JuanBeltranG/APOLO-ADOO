@@ -389,54 +389,53 @@
                     <div class="col-xl-5 col-12">
                         <div class="card-fill card">
                             <div class="card-header">
-                                <h4 class="card-header-title">Contactos recién añadidos</h4><a class="small" href="agenda.html">Ver todos</a>
+                                <h4 class="card-header-title">Contactos recién añadidos</h4>
+                                <a class="small" >Ver todos</a>
                             </div>
                             <div class="card-body">
                                 <div class="list-group-flush list-group-activity my-n3 list-group">
-                                    <div class="list-group-item">
+                                 
+                                 <%
+            
+            for(int i=0; i< ContactosAdesplegar.size(); i++){
+                
+            Contacto contactoDespliega = ContactosAdesplegar.get(i);
+            
+            String imagenContacto;
+                if(contactoDespliega.getSexo().equals("Masculino")){
+                    imagenContacto="Resources/Images/carita-hombre.png";
+                }else if(contactoDespliega.getSexo().equals("Femenino")){
+                    imagenContacto="Resources/Images/carita-mujer.png";
+                }else{
+                    imagenContacto="Resources/Images/carita-otro.png";
+                }
+            
+            %>
+                                    
+            
+            
+            <div class="list-group-item">
                                         <div class="row">
                                             <div class="col-auto">
                                                 <div class="avatar avatar-sm avatar-online"><img
                                                         class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-1.jpg" alt="Dianna Smiley" />
+                                                        src="<%out.print(imagenContacto);%>" alt="Contacto gen" />
                                                 </div>
                                             </div>
                                             <div class="ms-n2 col">
-                                                <h5 class="mb-1">Dianna Smiley</h5>
-                                                <p class="small text-gray-700 mb-0">26 años</p><small
-                                                    class="text-muted">Hace 2 minutos</small>
+                                                <h5 class="mb-1"><% out.print(contactoDespliega.getNombre()) ;%> <%out.print(contactoDespliega.getApat() );%></h5>
+                                                <p class="small text-gray-700 mb-0"><% out.print(contactoDespliega.getEdad()) ;%> años</p><small
+                                                    class="text-muted"><% out.print(contactoDespliega.getCorreo()) ; %></small>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <div class="avatar avatar-sm avatar-online"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-2.jpg" alt="Ab Hadley" />
-                                                </div>
-                                            </div>
-                                            <div class="ms-n2 col">
-                                                <h5 class="mb-1">Ab Hadley</h5>
-                                                <p class="small text-gray-700 mb-0">23 años</p><small class="text-muted">Hace 1 hora
-                                                    </small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-auto">
-                                                <div class="avatar avatar-sm avatar-offline"><img
-                                                        class="avatar-img rounded-circle"
-                                                        src="https://dashkit-react.vercel.app/img/avatars/profiles/avatar-3.jpg" alt="Adolfo Hess" />
-                                                </div>
-                                            </div>
-                                            <div class="ms-n2 col">
-                                                <h5 class="mb-1">Adolfo Hess</h5>
-                                                <p class="small text-gray-700 mb-0">33 años</p><small class="text-muted">Hace 8 horas</small>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
+                                   <%
+                
+                }
+                
+                %>
+                                    
                                 </div>
                             </div>
                         </div>

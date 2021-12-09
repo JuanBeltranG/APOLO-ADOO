@@ -110,10 +110,10 @@ public class RegistroContacto extends HttpServlet {
         if(RegistroExitoso){
             
             try (PrintWriter out = response.getWriter()) {
-               out.println("<script>alert('Se registro exitosamente al contacto');window.location = 'Pages/board.html'; </script>");
+               out.println("<script>alert('Se registro exitosamente al contacto');window.location = 'ConsultaContactos'; </script>");
             }
             
-            request.getRequestDispatcher("Pages/board.html").forward(request, response);
+            
             //response.sendRedirect("ConsultaContactos");
             
             
