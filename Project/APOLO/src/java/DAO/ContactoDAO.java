@@ -9,6 +9,7 @@ import DBConection.ConexionBD;
 import Models.Contacto;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,10 +23,15 @@ public class ContactoDAO {
     
     private final String GuardaContacto = "{call GuardaContacto(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
     private final String ConsultaContactos = "{call ConsultaContactos(?)}";
+    private final String trae_todos_de_agente = "select * from apolo.contacto where binary apolo.contacto.Id_Agente = ?;";
     
     
     private Connection cnx;
     ConexionBD Conexion = new ConexionBD();
+    
+    private Connection conex = null;
+    private PreparedStatement sta = null;
+    private ResultSet resul = null;
 
     public ContactoDAO() {
         this.cnx = Conexion.getConectar();
@@ -111,9 +117,31 @@ public class ContactoDAO {
         return c;
     }
     
-    
-    
-    
-    
+    public ArrayList<Contacto> todosContactosAgente(int Id_Agente){
+        ArrayList<Contacto> lista_contactos = new ArrayList<>();
+        
+        try{
+            ConexionBD conecta = new ConexionBD();
+            conex = conecta.getConectar();
+            
+            sta = conex.prepareCall(trae_todos_de_agente);
+            sta.setInt(1, Id_Agente);
+            
+            resul = sta.executeQuery();
+            
+            while(resul.next())
+                lista_contactos.add(new Contacto(resul.getInt(1), resul.getInt(2), resul.getString(3), resul.getString(4),
+                        resul.getString(5), resul.getString(6), resul.getString(7), resul.getString(8), resul.getInt(9),
+                        resul.getString(10), resul.getString(11), resul.getInt(12), resul.getString(13), resul.getString(14),
+                        resul.getString(15)));
+            
+            conex.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        return lista_contactos;
+    }
     
 }

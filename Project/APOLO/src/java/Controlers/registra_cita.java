@@ -7,6 +7,7 @@ package Controlers;
 
 import DAO.CitaDAO;
 import Extras.String_a_Date;
+import Models.AgenteSeguros;
 import Models.Cita;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -61,7 +62,8 @@ public class registra_cita extends HttpServlet {
             String_a_Date convertidor_fecha = new String_a_Date();
             HttpSession datos_sesion = request.getSession();
             
-            int Id_Agente = (int) datos_sesion.getAttribute("Id_Agente");
+            AgenteSeguros Agente= (AgenteSeguros)datos_sesion.getAttribute("usuario");
+            int Id_Agente = Agente.getID();
             int Id_Contacto = Integer.parseInt(request.getParameter("Id_Contacto"));
             String Tipo_Cita = request.getParameter("Tipo_Cita");
             Date Fecha = convertidor_fecha.covertir(request.getParameter("Fecha"));
