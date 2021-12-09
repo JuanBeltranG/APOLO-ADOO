@@ -67,6 +67,18 @@ create table Ventas(
 );
 
 
+create table Recordatorios(
+
+	Id_Recordatorio int(3) not null auto_increment primary key,
+    Id_Agente int(3),
+    Nombre_Contacto varchar(60),
+    Fecha_Limite date,
+    Texto_Recordatorio varchar(300),
+    foreign key (Id_Agente) references AgenteSeguros (Id_Agente)
+
+);
+
+
 select * from AgenteSeguros;
 
 
@@ -263,3 +275,28 @@ end;**
 delimiter ;
 /*---------------------------------------------------------------------------*/
 describe cita;
+
+
+use APOLO;
+drop procedure if exists GuardaRecordatorio;
+delimiter **
+create procedure GuardaRecordatorio( in nombreContacto varchar(60), in texto varchar(300), in fechaLimite date, in IdAgente int(3))
+begin
+ 
+
+INSERT INTO Recordatorios(Nombre_Contacto, Texto_Recordatorio , Fecha_Limite, Id_Agente ) 
+values(nombreContacto, texto, fechaLimite, IdAgente );
+
+end**
+
+use APOLO;
+drop procedure if exists ConsultaRecordatorios;
+delimiter **
+create procedure ConsultaRecordatorios( in IdAgente int(3))
+begin
+ 
+select * from Recordatorios where IdAgente = Id_Agente;
+
+end**
+
+select * from Recordatorios;
