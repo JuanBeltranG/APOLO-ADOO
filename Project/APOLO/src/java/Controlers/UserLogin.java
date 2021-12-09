@@ -80,10 +80,11 @@ public class UserLogin extends HttpServlet {
             
             
             try (PrintWriter out = response.getWriter()) {
-                out.println("<script>alert('Bienvenido "+agenteLogeado.getNombre()+"');window.location = 'Pages/board.html'; </script>");
+                out.println("<script>alert('Bienvenido "+agenteLogeado.getNombre()+"');window.location = 'ConsultarBoard'; </script>");
             }
             
-            request.getRequestDispatcher("Pages/board.html").forward(request, response); 
+            // response.sendRedirect("ConsultarBoard");
+            //request.getRequestDispatcher("Pages/board.html").forward(request, response); 
             
         }else{
             

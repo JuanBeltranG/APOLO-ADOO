@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -66,6 +67,12 @@ public class UserRegister extends HttpServlet {
         boolean altaExitosa = metodosAgente.AltaAgente(GuardaAgente);
         
         if(altaExitosa){
+            
+            AgenteSegurosDAO consultaAgente = new AgenteSegurosDAO();
+            /*Iniciamos sesion*/
+            AgenteSeguros agenteLogeado = consultaAgente.ConsultaAgente(CorreoAgente, ContraAgente);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("usuario", agenteLogeado);
             
             try (PrintWriter out = response.getWriter()) {
                out.println("<script>alert('Registro exitoso');window.location = 'Pages/cuenta.html'; </script>");

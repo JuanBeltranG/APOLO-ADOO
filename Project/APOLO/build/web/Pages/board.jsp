@@ -4,13 +4,17 @@
     Author     : juan-
 --%>
 
+<%@page import="Models.Recordatorio"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="Models.Contacto"%>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta charSet="utf-8" />
-    <link rel="shortcut icon" href="../Resources/Icon/Apolo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="Resources/Icon/Apolo.png" type="image/x-icon" />
     <title>Apolo - Tablero</title>
     <meta name="next-head-count" content="4" />
     <link rel="preload" href="https://dashkit-react.vercel.app/_next/static/css/86954328a650be218e9c.css" as="style" />
@@ -27,18 +31,92 @@
     <script src="https://dashkit-react.vercel.app/_next/static/chunks/pages/index-4f1ea3239c5878d6bcc9.js" defer=""></script>
     <script src="https://dashkit-react.vercel.app/_next/static/nrtWV97mGey8aZ6Gr9nFv/_buildManifest.js" defer=""></script>
     <script src="https://dashkit-react.vercel.app/_next/static/nrtWV97mGey8aZ6Gr9nFv/_ssgManifest.js" defer=""></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+          myInput.focus()
+        })     
+    </script>
+
+ <%
+ 
+    List<Contacto> TodosContactos;
+    
+    TodosContactos = (List<Contacto>)request.getAttribute("TodosContactos");
+    
+    int numeroContactos = 0;
+    ArrayList<Contacto> ContactosAdesplegar = new ArrayList<Contacto>();
+    Contacto con;
+    
+    for(Contacto c: TodosContactos){
+        con = new Contacto(
+        c.getId_Contacto(),
+        c.getId_Agente(),
+        c.getNombre(),
+        c.getApat(),
+        c.getAmat(),
+        c.getCorreo(),
+        c.getDireccion(),
+        c.getTelefono(),
+        c.getEdad(),
+        c.getSexo(),
+        c.getEstadoCivil(),
+        c.getPolizasActivas(),
+        c.getAnteceFinanci(),
+        c.getAntecePenal(),
+        c.getAnteceMed()
+        );
+        
+        ContactosAdesplegar.add(con);
+        numeroContactos++;
+        
+    }
+    
+    List<Recordatorio> TodosRecordatorios;
+    
+    TodosRecordatorios = (List<Recordatorio>)request.getAttribute("RecordatoriosAgente");
+    
+    int numeroRecordatorios = 0;
+    ArrayList<Recordatorio> RecordatoriosAdesplegar = new ArrayList<Recordatorio>();
+    Recordatorio rec;
+    
+
+    for(Recordatorio r: TodosRecordatorios){
+        
+        rec = new Recordatorio(
+            r.getId_Recordatorio(),
+            r.getId_Agente(),
+            r.getNombre_Contacto(),
+            r.getFecha_Limite(),
+            r.getTexto_Recordatorio()
+        );
+        
+        RecordatoriosAdesplegar.add(rec);
+        numeroRecordatorios++;
+        
+    }
+ %>
+    
+    
 </head>
+
+
 
 <body>
     <div id="__next">
         <nav class="navbar-vertical fixed-start navbar navbar-expand-md navbar-light">
             <div class="container-fluid"><button type="button" aria-label="Toggle navigation"
                     class="navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button><a href="board.html"
-                    class="navbar-brand"><img class="navbar-brand-img" src="../Resources/Images/LogoApolo.png" alt="..." /></a>
+                    class="navbar-brand"><img class="navbar-brand-img" src="Resources/Images/LogoApolo.png" alt="..." /></a>
                 <div class="d-md-none dropdown">
                     <div class="avatar avatar-sm avatar-online dropdown-toggle" id="react-aria5016654841-32"
                         aria-expanded="false" role="button"><img class="avatar-img rounded-circle"
-                            src="../Resources/Images/wicho.jpg" alt="..." /></div>
+                            src="Resources/Images/wicho.jpg" alt="..." /></div>
                 </div>
                 <div class="navbar-collapse collapse">
                     <form class="mt-4 mb-3 d-md-none">
@@ -55,23 +133,22 @@
                     </form>
                     <div>
                         <div class="navbar-nav">
-                            <div class="nav-item"><a href="board.html" role="button" class="nav-link" tabindex="0"><svg width="17"
-                                        height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-home ">
+                            <div class="nav-item">
+                                <form action="ConsultarBoard" method="post">
+                                <a  role="button" class="nav-link" tabindex="0">
+                                    
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home ">
                                         <g>
                                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                         </g>
-                                    </svg>Inicio<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="feather feather-chevron-down ms-auto nav-chevron active">
-                                    </svg></a>
-                                
+                                    </svg>
+                                    <input type="submit" value="Inicio" >
+                                </a>
+                                </form>
                             </div>
                             <div class="nav-item">
-                                <form action="../ConsultaContactos" method="post">
+                                <form action="ConsultaContactos" method="post">
 
                                <a role="button" class="nav-link" tabindex="0">
                                   
@@ -87,7 +164,7 @@
                                </a>
                                 </form>
                             </div>
-                            <div class="nav-item"><a href="estadisticas.html" data-rr-ui-event-key="/widgets"
+                            <div class="nav-item"><a href="Pages/estadisticas.html" data-rr-ui-event-key="/widgets"
                                     class="nav-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" class="feather feather-grid ">
@@ -98,7 +175,7 @@
                                             <rect x="3" y="14" width="7" height="7"></rect>
                                         </g>
                                     </svg>Estadisticas</a></div>
-                            <div class="nav-item"><a href="cuenta.html" role="button" class="nav-link" tabindex="0"><svg width="17"
+                            <div class="nav-item"><a href="Pages/cuenta.html" role="button" class="nav-link" tabindex="0"><svg width="17"
                                         height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                         class="feather feather-user ">
@@ -128,7 +205,7 @@
                         <div class="dropup">
                             <div class="avatar avatar-sm avatar-online dropdown-toggle" id="react-aria5016654841-33"
                                 aria-expanded="false" role="button"><img class="avatar-img rounded-circle"
-                                    src="../Resources/Images/perfilApolo.jpg" alt="..." /></div>
+                                    src="Resources/Images/perfilApolo.jpg" alt="..." /></div>
                         </div><a class="navbar-user-link" role="button">
                             <div class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -368,10 +445,17 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-header-title">Recordatorios</h4><span
-                                    class="badge bg-secondary-soft">5 pendientes</span>
+                                    class="badge bg-secondary-soft"><% out.print(numeroRecordatorios) ;%> pendientes</span>
                             </div>
                             <div class="card-body">
+                                
                                 <div class="checklist" data-rbd-droppable-id="tasks" data-rbd-droppable-context-id="0">
+                                
+                                <%   
+    
+                                    for(int i=0; i< RecordatoriosAdesplegar.size(); i++){      
+                                    Recordatorio recordatorioDespliega = RecordatoriosAdesplegar.get(i);  
+                                %>
                                     <div class="checklist-item" data-rbd-draggable-context-id="0"
                                         data-rbd-draggable-id="task-1">
                                         <div class=""><input type="checkbox" id="task-1"
@@ -379,44 +463,81 @@
                                                 aria-describedby="rbd-hidden-text-0-hidden-text-0"
                                                 data-rbd-drag-handle-draggable-id="task-1"
                                                 data-rbd-drag-handle-context-id="0" draggable="false" for="task-1"
-                                                class="form-check-label">Felicitar a Dianna por su cumpleaños.</label>
+                                                class="form-check-label"><%out.print(recordatorioDespliega.getTexto_Recordatorio() );%></label>
                                         </div>
                                     </div>
-                                    <div class="checklist-item" data-rbd-draggable-context-id="0"
-                                        data-rbd-draggable-id="task-2">
-                                        <div class=""><input type="checkbox" id="task-2"
-                                                class="me-3 form-check-input" /><label tabindex="0" role="button"
-                                                aria-describedby="rbd-hidden-text-0-hidden-text-0"
-                                                data-rbd-drag-handle-draggable-id="task-2"
-                                                data-rbd-drag-handle-context-id="0" draggable="false" for="task-2"
-                                                class="form-check-label">Preguntar si John renovará su poliza.</label></div>
-                                    </div>
-                                    <div class="checklist-item" data-rbd-draggable-context-id="0"
-                                        data-rbd-draggable-id="task-3">
-                                        <div class=""><input type="checkbox" id="task-3"
-                                                class="me-3 form-check-input" /><label tabindex="0" role="button"
-                                                aria-describedby="rbd-hidden-text-0-hidden-text-0"
-                                                data-rbd-drag-handle-draggable-id="task-3"
-                                                data-rbd-drag-handle-context-id="0" draggable="false" for="task-3"
-                                                class="form-check-label">Preguntarle a Ab si su hermano necesita una poliza.</label></div>
-                                    </div>
-                                    <div class="checklist-item" data-rbd-draggable-context-id="0"
-                                        data-rbd-draggable-id="task-4">
-                                        <div class=""><input type="checkbox" id="task-4"
-                                                class="me-3 form-check-input" /><label tabindex="0" role="button"
-                                                aria-describedby="rbd-hidden-text-0-hidden-text-0"
-                                                data-rbd-drag-handle-draggable-id="task-4"
-                                                data-rbd-drag-handle-context-id="0" draggable="false" for="task-4"
-                                                class="form-check-label">Ofrecerle a Anne la nueva poliza para automoviles.</label></div>
-                                    </div>
+                                    
+                                <% 
+                                    }
+                                %>
+                                    
                                 </div>
                             </div>
                             <div class="card-footer">
                                 <div class="align-items-center row">
                                     <div class="col"><textarea placeholder="Añadir recordatorio"
                                             class="form-control-auto form-control-flush form-control"></textarea></div>
-                                    <div class="col-auto"><button type="button"
-                                            class="btn btn-primary btn-sm">Añadir</button></div>
+                                    <div class="col-auto">
+                                        <!--<button type="button" class="btn btn-primary btn-sm">Añadir</button>-->
+                                         <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                           Añadir recordatorio
+                                        </button>
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Registro de recordatorio</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                                <form action="altaRecordatorio" method="post">
+                                              <div class="modal-body">
+
+                                                <div class="row g-2">
+                                                  
+                                                    <div class="col-md">
+                                                      <div class="form-floating">
+                                                        <input type="text" class="form-control" id="NombreContacto" name="NombreContacto"  placeholder="Juan Beltran" >
+                                                        <label for="floatingInputGrid">Nombre de contacto</label>
+                                                      </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="row g-2">
+                                                  
+                                                    <div class="col-md">
+                                                      <div class="form-floating">
+                                                        <input type="date" class="form-control" id="FechaLimite" name="FechaLimite" placeholder="name@example.com" >
+                                                        <label for="floatingInputGrid">Fecha limite para cumplir el recordatorio</label>
+                                                      </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="row g-2">
+                                                  
+                                                    <div class="col-md">
+                                                      <div class="form-floating">
+                                                        <input type="text" class="form-control" id="TextoRecordatorio" name="TextoRecordatorio" placeholder="Renovar su poliza" >
+                                                        <label for="floatingInputGrid">Escribe tu recordatorio</label>
+                                                      </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                              </div>
+                                              <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <!--<button type="button" class="btn btn-primary">Registrar</button>-->
+                                                <input type="submit" value="Registrar" class="btn btn-primary" >
+                                              </div>
+                                                </form>
+                                            </div>
+                                          </div>
+                                        </div>  
+                                          
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -424,6 +545,8 @@
                 </div>
             </div>
         </div>
+                
+                
     </div>
      </body>
 </html>

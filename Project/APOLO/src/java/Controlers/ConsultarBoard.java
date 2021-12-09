@@ -5,13 +5,14 @@
  */
 package Controlers;
 
+import DAO.ContactoDAO;
 import DAO.RecordatoriosDAO;
-import Extras.String_a_Date;
 import Models.AgenteSeguros;
+import Models.Contacto;
 import Models.Recordatorio;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +22,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author danyv
+ * @author juan-
  */
-@WebServlet(name = "altaRecordatorio", urlPatterns = {"/altaRecordatorio"})
-public class altaRecordatorio extends HttpServlet {
+@WebServlet(name = "ConsultarBoard", urlPatterns = {"/ConsultarBoard"})
+public class ConsultarBoard extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,12 +44,17 @@ public class altaRecordatorio extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet altaRecordatorio</title>");            
+            out.println("<title>Servlet ConsultarBoard</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet altaRecordatorio at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ConsultarBoard at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+            
+            
+               
+       
+        
         }
     }
 
@@ -64,6 +70,21 @@ public class altaRecordatorio extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+         HttpSession session = request.getSession(true);
+        AgenteSeguros Agente= (AgenteSeguros)session.getAttribute("usuario");
+        
+        ContactoDAO metodosContacto = new ContactoDAO();
+        RecordatoriosDAO metodosRecordatorio = new RecordatoriosDAO(); 
+        
+        List<Recordatorio> RecordatoriosAgente = metodosRecordatorio.ConsultarRecordatorios(Agente.getID());
+        request.setAttribute("RecordatoriosAgente", RecordatoriosAgente);
+        
+        List<Contacto> ContactosAgente = metodosContacto.ConsultaContactos(Agente.getID());
+        request.setAttribute("TodosContactos", ContactosAgente);
+        
+        request.getRequestDispatcher("Pages/board.jsp").forward(request, response);
+        
         processRequest(request, response);
     }
 
@@ -79,26 +100,24 @@ public class altaRecordatorio extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String_a_Date convertidor_fecha = new String_a_Date();
-        
-        String NombreContacto= request.getParameter("NombreContacto"); 
-        Date FechaLimite = convertidor_fecha.covertir(request.getParameter("FechaLimite"));
-        String TextoRecordatorio= request.getParameter("TextoRecordatorio"); 
-        
-        //Obtenemos el correo del agente de seguros que ya estaba previamente cargado en la sesion
+         
         HttpSession session = request.getSession(true);
         AgenteSeguros Agente= (AgenteSeguros)session.getAttribute("usuario");
         
-        int Id_Agente = Agente.getID();
+        ContactoDAO metodosContacto = new ContactoDAO();
+        RecordatoriosDAO metodosRecordatorio = new RecordatoriosDAO(); 
         
-        Recordatorio nuevoRecordatorio = new Recordatorio(Id_Agente, NombreContacto, FechaLimite, TextoRecordatorio);
-        RecordatoriosDAO metodosRecordatorio = new RecordatoriosDAO();
-        boolean registroExitoso = metodosRecordatorio.AltaRecordatorio(nuevoRecordatorio);
+        List<Recordatorio> RecordatoriosAgente = metodosRecordatorio.ConsultarRecordatorios(Agente.getID());
+        request.setAttribute("RecordatoriosAgente", RecordatoriosAgente);
         
-        response.sendRedirect("ConsultarBoard");
+       List<Contacto> ContactosAgente = metodosContacto.ConsultaContactos(Agente.getID());
+        request.setAttribute("TodosContactos", ContactosAgente);
+        
+        request.getRequestDispatcher("Pages/board.jsp").forward(request, response);
+        
+        
         
         processRequest(request, response);
-        
     }
 
     /**
